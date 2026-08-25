@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حملة المولد النبوي الشريف - دينارك</title>
+    <title>حملة المولد النبوي الشريف - الحكومة الأردنية</title>
     <style>
         * {
             margin: 0;
@@ -11,9 +11,14 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e91e63 0%, #c2185b 50%, #880e4f 100%);
+            font-family: 'Arabic Typesetting', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(180deg, #1a1a2e 0%, #0f3460 50%, #16213e 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -21,17 +26,29 @@
             overflow: hidden;
         }
 
-        .container {
+        .page-wrapper {
             width: 100%;
-            max-width: 800px;
-            padding: 40px 20px;
-            animation: slideIn 0.8s ease-out;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        @keyframes slideIn {
+        /* Header with flags and official symbols */
+        .header {
+            background: linear-gradient(90deg, rgba(206, 17, 38, 0.95) 0%, rgba(206, 17, 38, 0.9) 50%, rgba(0, 0, 0, 0.1) 100%);
+            padding: 20px 0;
+            border-bottom: 4px solid #ffd700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -39,29 +56,122 @@
             }
         }
 
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            animation: fadeIn 1s ease-out;
+        .flag-container {
+            width: 120px;
+            height: 80px;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        @keyframes fadeIn {
+        .flag-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .royal-seal {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        .royal-seal img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .header-title {
+            flex: 1;
+            text-align: center;
+            color: white;
+            animation: fadeIn 0.8s ease-out 0.3s both;
+        }
+
+        .header-title h2 {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header-title p {
+            font-size: 0.9em;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            animation: zoomIn 0.8s ease-out;
+        }
+
+        @keyframes zoomIn {
             from {
                 opacity: 0;
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
+                transform: scale(1);
             }
         }
 
-        .logo {
-            width: 120px;
-            height: 120px;
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 60px 50px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #ffd700;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ce112e 0%, #ffd700 50%, #007a5e 100%);
+        }
+
+        .dinarek-logo {
+            width: 140px;
+            height: 140px;
             margin: 0 auto 30px;
-            animation: pulse 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        .dinarek-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(206, 17, 38, 0.2));
         }
 
         @keyframes pulse {
@@ -69,30 +179,84 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.05);
+                transform: scale(1.08);
+            }
+        }
+
+        .official-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ce112e 0%, #a00a2e 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 0.95em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(206, 17, 38, 0.3);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         h1 {
-            color: #e91e63;
-            font-size: 2.5em;
+            color: #1a1a2e;
+            font-size: 2.8em;
             margin-bottom: 15px;
             font-weight: 700;
+            line-height: 1.2;
+            animation: fadeIn 0.8s ease-out 0.2s both;
         }
 
         .subtitle {
             color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
+            font-size: 1.15em;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            animation: fadeIn 0.8s ease-out 0.3s both;
         }
 
         .amount-box {
-            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+            background: linear-gradient(135deg, #ce112e 0%, #a00a2e 50%, #007a5e 100%);
             color: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin: 40px 0;
-            animation: scaleUp 0.8s ease-out;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 45px 0;
+            animation: scaleUp 0.8s ease-out 0.4s both;
+            box-shadow: 0 15px 40px rgba(206, 17, 38, 0.3);
+            border: 2px solid #ffd700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .amount-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(30px, 30px);
+            }
         }
 
         @keyframes scaleUp {
@@ -107,113 +271,137 @@
         }
 
         .amount-label {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            opacity: 0.9;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
 
         .amount-value {
-            font-size: 3.5em;
+            font-size: 4.2em;
             font-weight: 700;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .amount-currency {
-            font-size: 1.3em;
-            opacity: 0.9;
+            font-size: 1.4em;
+            opacity: 0.95;
+            letter-spacing: 1px;
         }
 
         .message {
             color: #333;
-            font-size: 1.1em;
+            font-size: 1.15em;
             line-height: 1.8;
-            margin: 30px 0;
+            margin: 35px 0;
+            animation: fadeIn 0.8s ease-out 0.5s both;
         }
 
         .message strong {
-            color: #e91e63;
+            color: #ce112e;
+            font-weight: 700;
         }
 
         .description {
             color: #888;
-            font-size: 0.95em;
-            margin: 20px 0;
-            line-height: 1.6;
+            font-size: 1em;
+            margin: 25px 0;
+            line-height: 1.7;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ce112e, transparent);
+            margin: 30px auto;
+            animation: fadeIn 0.8s ease-out 0.7s both;
         }
 
         .btn-container {
-            margin-top: 50px;
+            margin-top: 55px;
+            animation: fadeIn 0.8s ease-out 0.8s both;
         }
 
         .btn-receive {
-            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+            background: linear-gradient(135deg, #ce112e 0%, #a00a2e 50%, #007a5e 100%);
             color: white;
             border: none;
-            padding: 18px 60px;
-            font-size: 1.2em;
+            padding: 22px 70px;
+            font-size: 1.3em;
             font-weight: 700;
-            border-radius: 50px;
+            border-radius: 60px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
-            animation: buttonPop 0.8s ease-out 0.5s both;
+            box-shadow: 0 15px 40px rgba(206, 17, 38, 0.4);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ffd700;
         }
 
-        @keyframes buttonPop {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+        .btn-receive::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-receive:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-receive:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(206, 17, 38, 0.5);
         }
 
         .btn-receive:active {
             transform: translateY(-1px);
         }
 
-        .timer {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            color: white;
-            font-size: 0.9em;
-            opacity: 0;
-            pointer-events: none;
+        .btn-receive span {
+            position: relative;
+            z-index: 1;
         }
 
         .footer-text {
             color: #999;
+            font-size: 0.9em;
+            margin-top: 35px;
+            line-height: 1.8;
+            animation: fadeIn 0.8s ease-out 0.9s both;
+        }
+
+        .security-badge {
+            display: inline-block;
+            background: #f0f0f0;
+            border: 2px solid #ce112e;
+            color: #ce112e;
+            padding: 10px 20px;
+            border-radius: 20px;
             font-size: 0.85em;
-            margin-top: 30px;
+            font-weight: 600;
+            margin-top: 20px;
+            animation: fadeIn 0.8s ease-out 1s both;
         }
 
-        @media (max-width: 600px) {
-            .card {
-                padding: 40px 25px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .amount-value {
-                font-size: 2.5em;
-            }
-
-            .btn-receive {
-                padding: 15px 40px;
-                font-size: 1em;
-            }
+        .security-badge::before {
+            content: '✓ ';
+            font-weight: 700;
+            margin-right: 5px;
         }
 
+        /* Decorative elements */
         .decorative-element {
             position: fixed;
             top: 0;
@@ -222,94 +410,378 @@
             height: 100%;
             pointer-events: none;
             overflow: hidden;
+            z-index: 0;
         }
 
         .circle {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.1;
+            opacity: 0.08;
         }
 
         .circle1 {
-            width: 300px;
-            height: 300px;
-            top: -100px;
-            right: -100px;
-            background: white;
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -150px;
+            background: #ffd700;
         }
 
         .circle2 {
-            width: 200px;
-            height: 200px;
-            bottom: -50px;
-            left: -50px;
-            background: white;
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -100px;
+            background: #ce112e;
         }
+
+        .circle3 {
+            width: 250px;
+            height: 250px;
+            top: 50%;
+            left: 50%;
+            background: #007a5e;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+
+            .flag-container {
+                width: 90px;
+                height: 60px;
+                margin: 10px;
+            }
+
+            .royal-seal {
+                width: 80px;
+                height: 80px;
+                margin: 10px;
+            }
+
+            .header-title h2 {
+                font-size: 1.1em;
+            }
+
+            .header-title p {
+                font-size: 0.8em;
+            }
+
+            .card {
+                padding: 40px 25px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .amount-box {
+                padding: 35px;
+                margin: 30px 0;
+            }
+
+            .amount-value {
+                font-size: 3em;
+            }
+
+            .btn-receive {
+                padding: 18px 50px;
+                font-size: 1.1em;
+            }
+
+            .main-content {
+                padding: 20px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 0;
+            }
+
+            .flag-container {
+                width: 70px;
+                height: 50px;
+                margin: 8px;
+            }
+
+            .royal-seal {
+                width: 60px;
+                height: 60px;
+                margin: 8px;
+                order: -1;
+            }
+
+            .card {
+                padding: 30px 15px;
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .amount-box {
+                padding: 25px;
+            }
+
+            .amount-value {
+                font-size: 2.2em;
+            }
+
+            .btn-receive {
+                padding: 15px 35px;
+                font-size: 1em;
+            }
+
+            .dinarek-logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Loading animation */
+        .loading-dots {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .loading-dots span {
+            animation: blink 1.4s infinite;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0%, 60%, 100% {
+                opacity: 0.5;
+            }
+            30% {
+                opacity: 1;
+            }
+        }
+
+        /* @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } */
     </style>
 </head>
 <body>
     <div class="decorative-element">
         <div class="circle circle1"></div>
         <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
     </div>
 
-    <div class="container">
-        <div class="card">
-            <img src="https://c.top4top.io/p_3889xnmjq0.png" alt="شعار دينارك" class="logo">
-            
-            <h1>مبارك عليكم المولد النبوي الشريف</h1>
-            <p class="subtitle">بمناسبة ميلاد أشرف الخلق عليه أفضل الصلاة والسلام</p>
-
-            <div class="amount-box">
-                <div class="amount-label">مساهمة خاصة بهذه المناسبة المباركة</div>
-                <div class="amount-value">50</div>
-                <div class="amount-currency">دينار</div>
+    <div class="page-wrapper">
+        <!-- Header with official elements -->
+        <div class="header">
+            <div class="flag-container">
+                <img src="https://a.top4top.io/p_3889555900.png" alt="العلم الأردني" title="العلم الأردني">
             </div>
-
-            <div class="message">
-                <p><strong>دينارك</strong> يسعدها أن تساهم معكم في إحياء هذه المناسبة المجيدة</p>
+            <div class="header-title">
+                <h2>الحكومة الأردنية</h2>
+                <p>حملة المولد النبوي الشريف</p>
             </div>
-
-            <div class="description">
-                <p>حملة خيرية مميزة بمناسبة المولد النبوي الشريف</p>
-                <p>نتشرف بمشاركتكم لنا في هذا العطاء المبارك</p>
+            <div class="royal-seal">
+                <img src="https://l.top4top.io/p_3889cz1i60.jpeg" alt="الديوان الملكي" title="الديوان الملكي الهاشمي">
             </div>
+        </div>
 
-            <div class="btn-container">
-                <button class="btn-receive" onclick="handleReceive()">استلام المساهمة</button>
-            </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="container">
+                <div class="card page-content">
+                    <div class="official-badge">إعلان رسمي من الحكومة الأردنية</div>
 
-            <div class="footer-text">
-                <p>شكراً لكم على دعمكم المستمر</p>
+                    <img src="https://c.top4top.io/p_3889xnmjq0.png" alt="شعار دينارك" class="dinarek-logo">
+                    
+                    <h1>مبارك عليكم المولد النبوي الشريف</h1>
+                    <p class="subtitle">حملة خيرية وطنية بمناسبة ميلاد سيدنا محمد ﷺ أشرف الخلق أجمعين</p>
+
+                    <div class="divider"></div>
+
+                    <div class="amount-box">
+                        <div class="amount-label">مساهمة حكومية مميزة بهذه المناسبة المجيدة</div>
+                        <div class="amount-value">50</div>
+                        <div class="amount-currency">دينار أردني</div>
+                    </div>
+
+                    <div class="message">
+                        <p>يسعد <strong>الديوان الملكي الهاشمي</strong> بالتعاون مع <strong>دينارك</strong> لتقديم هذه المساهمة الخيرية</p>
+                    </div>
+
+                    <div class="description">
+                        <p>حملة وطنية خيرية احتفاءً بمناسبة المولد النبوي الشريف</p>
+                        <p>لتعزيز التكافل الاجتماعي والقيم الإسلامية النبيلة</p>
+                    </div>
+
+                    <div class="btn-container">
+                        <button class="btn-receive" onclick="handleReceive()">
+                            <span>استلام المساهمة</span>
+                        </button>
+                    </div>
+
+                    <div class="security-badge">تحقق من الأمان - معاملة رسمية موثوقة</div>
+
+                    <div class="footer-text">
+                        <p>شكراً لمساهمتك في دعم هذه المبادرة الوطنية</p>
+                        <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.7;">© 2024 الحكومة الأردنية - جميع الحقوق محفوظة</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // تأخير التوجيه لمدة 7 ثواني بعد الضغط على الزر
+        // متغير عام للتحكم في التوجيه
+        const redirectConfig = {
+            enabled: true,
+            delay: 7000, // 7 ثواني
+            url: null, // سيتم تحديده لاحقاً
+            showCounter: false // لا نظهر العداد
+        };
+
         function handleReceive() {
-            // إضافة تأثير عند الضغط
             const btn = document.querySelector('.btn-receive');
-            btn.disabled = true;
-            btn.textContent = 'جاري المعالجة...';
+            const originalText = btn.innerHTML;
             
-            // الانتظار 7 ثواني ثم التوجيه
-            setTimeout(() => {
-                // يمكن تغيير الرابط هنا للصفحة المطلوبة
-                // window.location.href = 'صفحتك-هنا.html';
-                
-                // حالياً سيعرض رسالة توضيحية
-                alert('شكراً لك! سيتم توجيهك الآن إلى الصفحة التالية.');
-                
-                // قم بإلغاء التعليق من السطر التالي وأضف الرابط المطلوب
-                // window.location.href = 'https://yourpage.com';
-            }, 7000);
+            // تعطيل الزر
+            btn.disabled = true;
+            
+            // عرض رسالة المعالجة
+            btn.innerHTML = '<span>جاري المعالجة<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span></span>';
+            btn.style.opacity = '0.8';
+            
+            console.log('تم الضغط على زر الاستلام - بدء العد التنازلي: ' + (redirectConfig.delay / 1000) + ' ثواني');
+            
+            // عرض إخطار للمستخدم
+            showNotification('تم استلام طلبك بنجاح ✓', 'success');
+            
+            // التوجيه بعد 7 ثواني
+            if (redirectConfig.enabled && redirectConfig.url) {
+                setTimeout(() => {
+                    console.log('إعادة التوجيه إلى: ' + redirectConfig.url);
+                    window.location.href = redirectConfig.url;
+                }, redirectConfig.delay);
+            } else {
+                // إذا لم يتم تحديد URL، نعيد الزر لحالته الأصلية
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    showNotification('الرجاء تحديد الصفحة المطلوب التوجيه إليها', 'info');
+                }, redirectConfig.delay);
+            }
         }
 
-        // تحميل الصفحة مع الحركات
+        // دالة لإظهار الإخطارات
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                color: white;
+                padding: 16px 24px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 9999;
+                font-weight: 600;
+                animation: slideInLeft 0.3s ease-out;
+                font-family: 'Arabic Typesetting', Arial, sans-serif;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutLeft 0.3s ease-out';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // إضافة أسلوب الحركة للإخطارات
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInLeft {
+                from {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideOutLeft {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // دالة لتحديث الرابط
+        function setRedirectURL(url) {
+            redirectConfig.url = url;
+            console.log('تم تحديث رابط التوجيه إلى: ' + url);
+        }
+
+        // دالة لتعطيل التوجيه التلقائي
+        function disableAutoRedirect() {
+            redirectConfig.enabled = false;
+            console.log('تم تعطيل التوجيه التلقائي');
+        }
+
+        // دالة لتفعيل التوجيه التلقائي
+        function enableAutoRedirect() {
+            redirectConfig.enabled = true;
+            console.log('تم تفعيل التوجيه التلقائي');
+        }
+
+        // عند تحميل الصفحة
         window.addEventListener('load', () => {
-            console.log('تم تحميل الصفحة بنجاح');
+            console.log('✓ تم تحميل الصفحة بنجاح');
+            console.log('استخدم setRedirectURL("رابطك هنا") لتحديث رابط التوجيه');
+            showNotification('أهلاً وسهلاً بك في حملة المولد النبوي الشريف', 'info');
         });
+
+        // دوال للاختبار والتطوير
+        window.campaignAPI = {
+            setRedirectURL,
+            disableAutoRedirect,
+            enableAutoRedirect,
+            getConfig: () => redirectConfig,
+            simulateClick: () => handleReceive()
+        };
     </script>
 </body>
 </html>
