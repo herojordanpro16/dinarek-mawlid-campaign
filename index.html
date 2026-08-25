@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حملة المولد النبوي الشريف - دينارك</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e91e63 0%, #c2185b 50%, #880e4f 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 40px 20px;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .amount-box {
+            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            animation: scaleUp 0.8s ease-out;
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .amount-label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .amount-value {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .amount-currency {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .message {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 30px 0;
+        }
+
+        .message strong {
+            color: #e91e63;
+        }
+
+        .description {
+            color: #888;
+            font-size: 0.95em;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .btn-container {
+            margin-top: 50px;
+        }
+
+        .btn-receive {
+            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+            color: white;
+            border: none;
+            padding: 18px 60px;
+            font-size: 1.2em;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+            animation: buttonPop 0.8s ease-out 0.5s both;
+        }
+
+        @keyframes buttonPop {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .btn-receive:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
+        }
+
+        .btn-receive:active {
+            transform: translateY(-1px);
+        }
+
+        .timer {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            color: white;
+            font-size: 0.9em;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .amount-value {
+                font-size: 2.5em;
+            }
+
+            .btn-receive {
+                padding: 15px 40px;
+                font-size: 1em;
+            }
+        }
+
+        .decorative-element {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .circle1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            right: -100px;
+            background: white;
+        }
+
+        .circle2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-element">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://c.top4top.io/p_3889xnmjq0.png" alt="شعار دينارك" class="logo">
+            
+            <h1>مبارك عليكم المولد النبوي الشريف</h1>
+            <p class="subtitle">بمناسبة ميلاد أشرف الخلق عليه أفضل الصلاة والسلام</p>
+
+            <div class="amount-box">
+                <div class="amount-label">مساهمة خاصة بهذه المناسبة المباركة</div>
+                <div class="amount-value">50</div>
+                <div class="amount-currency">دينار</div>
+            </div>
+
+            <div class="message">
+                <p><strong>دينارك</strong> يسعدها أن تساهم معكم في إحياء هذه المناسبة المجيدة</p>
+            </div>
+
+            <div class="description">
+                <p>حملة خيرية مميزة بمناسبة المولد النبوي الشريف</p>
+                <p>نتشرف بمشاركتكم لنا في هذا العطاء المبارك</p>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn-receive" onclick="handleReceive()">استلام المساهمة</button>
+            </div>
+
+            <div class="footer-text">
+                <p>شكراً لكم على دعمكم المستمر</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تأخير التوجيه لمدة 7 ثواني بعد الضغط على الزر
+        function handleReceive() {
+            // إضافة تأثير عند الضغط
+            const btn = document.querySelector('.btn-receive');
+            btn.disabled = true;
+            btn.textContent = 'جاري المعالجة...';
+            
+            // الانتظار 7 ثواني ثم التوجيه
+            setTimeout(() => {
+                // يمكن تغيير الرابط هنا للصفحة المطلوبة
+                // window.location.href = 'صفحتك-هنا.html';
+                
+                // حالياً سيعرض رسالة توضيحية
+                alert('شكراً لك! سيتم توجيهك الآن إلى الصفحة التالية.');
+                
+                // قم بإلغاء التعليق من السطر التالي وأضف الرابط المطلوب
+                // window.location.href = 'https://yourpage.com';
+            }, 7000);
+        }
+
+        // تحميل الصفحة مع الحركات
+        window.addEventListener('load', () => {
+            console.log('تم تحميل الصفحة بنجاح');
+        });
+    </script>
+</body>
+</html>
