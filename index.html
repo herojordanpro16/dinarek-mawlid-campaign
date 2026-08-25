@@ -46,6 +46,9 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             animation: slideDown 0.6s ease-out;
             gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         @keyframes slideDown {
@@ -115,9 +118,10 @@
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 20px 15px;
             animation: zoomIn 0.8s ease-out;
+            padding-bottom: 0;
         }
 
         @keyframes zoomIn {
@@ -134,7 +138,7 @@
         .card {
             background: white;
             border-radius: 25px;
-            padding: 40px 25px;
+            padding: 35px 20px;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
             text-align: center;
             position: relative;
@@ -158,11 +162,11 @@
             display: inline-block;
             background: linear-gradient(135deg, #ce112e 0%, #a00a2e 100%);
             color: white;
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 30px;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             letter-spacing: 0.5px;
             box-shadow: 0 4px 15px rgba(206, 17, 38, 0.3);
             animation: slideUp 0.8s ease-out;
@@ -181,9 +185,9 @@
         }
 
         .dinarek-logo {
-            width: 100px;
-            height: 100px;
-            margin: 15px auto 20px;
+            width: 90px;
+            height: 90px;
+            margin: 12px auto 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -208,8 +212,8 @@
 
         h1 {
             color: #1a1a2e;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+            font-size: 1.7em;
+            margin-bottom: 12px;
             font-weight: 700;
             line-height: 1.3;
             animation: fadeIn 0.8s ease-out 0.2s both;
@@ -217,8 +221,8 @@
 
         .subtitle {
             color: #666;
-            font-size: 1em;
-            margin-bottom: 25px;
+            font-size: 0.95em;
+            margin-bottom: 20px;
             line-height: 1.6;
             animation: fadeIn 0.8s ease-out 0.3s both;
         }
@@ -227,16 +231,16 @@
             width: 60px;
             height: 3px;
             background: linear-gradient(90deg, transparent, #ce112e, transparent);
-            margin: 20px auto;
+            margin: 18px auto;
             animation: fadeIn 0.8s ease-out 0.4s both;
         }
 
         .amount-box {
             background: linear-gradient(135deg, #ce112e 0%, #a00a2e 50%, #007a5e 100%);
             color: white;
-            padding: 35px 20px;
+            padding: 32px 18px;
             border-radius: 20px;
-            margin: 30px 0;
+            margin: 25px 0;
             animation: scaleUp 0.8s ease-out 0.5s both;
             box-shadow: 0 15px 40px rgba(206, 17, 38, 0.3);
             border: 2px solid #ffd700;
@@ -277,8 +281,8 @@
         }
 
         .amount-label {
-            font-size: 1.05em;
-            margin-bottom: 12px;
+            font-size: 1em;
+            margin-bottom: 10px;
             opacity: 0.95;
             letter-spacing: 0.5px;
             font-weight: 600;
@@ -286,25 +290,61 @@
         }
 
         .amount-value {
-            font-size: 3em;
+            font-size: 2.8em;
             font-weight: 700;
             margin-bottom: 8px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .amount-currency {
-            font-size: 1.1em;
+            font-size: 1.05em;
             opacity: 0.95;
             letter-spacing: 0.5px;
             line-height: 1.4;
         }
 
+        .features-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #ce112e 0%, #007a5e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 0.85em;
+        }
+
         .message {
             color: #333;
-            font-size: 1em;
+            font-size: 0.95em;
             line-height: 1.7;
-            margin: 25px 0;
-            animation: fadeIn 0.8s ease-out 0.6s both;
+            margin: 20px 0;
+            animation: fadeIn 0.8s ease-out 0.7s both;
         }
 
         .message strong {
@@ -314,15 +354,31 @@
 
         .description {
             color: #888;
-            font-size: 0.95em;
-            margin: 20px 0;
+            font-size: 0.9em;
+            margin: 18px 0;
             line-height: 1.6;
-            animation: fadeIn 0.8s ease-out 0.7s both;
+            animation: fadeIn 0.8s ease-out 0.75s both;
         }
 
-        .btn-container {
-            margin-top: 30px;
-            animation: fadeIn 0.8s ease-out 0.8s both;
+        /* Fixed Button Container at Bottom */
+        .button-fixed-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            max-width: 480px;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 20%, white 100%);
+            padding: 25px 20px 20px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            animation: slideUp 0.6s ease-out;
+            z-index: 50;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .btn-receive {
@@ -341,7 +397,10 @@
             overflow: hidden;
             border: 2px solid #ffd700;
             width: 100%;
-            max-width: 300px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-receive::before {
@@ -371,31 +430,41 @@
             z-index: 1;
         }
 
+        .btn-receive:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
         .security-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: #f0f0f0;
             border: 2px solid #ce112e;
             color: #ce112e;
-            padding: 10px 18px;
+            padding: 10px 16px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.8em;
             font-weight: 600;
-            margin-top: 20px;
-            animation: fadeIn 0.8s ease-out 0.9s both;
+            animation: fadeIn 0.8s ease-out 0.8s both;
+            gap: 6px;
         }
 
         .security-badge::before {
-            content: '✓ ';
+            content: '✓';
             font-weight: 700;
-            margin-right: 5px;
+            font-size: 1.1em;
         }
 
         .footer-text {
             color: #999;
-            font-size: 0.85em;
-            margin-top: 25px;
-            line-height: 1.7;
-            animation: fadeIn 0.8s ease-out 1s both;
+            font-size: 0.8em;
+            line-height: 1.5;
+            animation: fadeIn 0.8s ease-out 0.9s both;
+        }
+
+        .main-content {
+            padding-bottom: 200px;
         }
 
         /* Decorative elements */
@@ -473,6 +542,46 @@
             }
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Bonus badge */
+        .bonus-badge {
+            background: linear-gradient(135deg, #FF6B00 0%, #FFB700 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+            animation: fadeIn 0.8s ease-out 0.65s both;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+        }
+
+        .timer-info {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 12px;
+            animation: fadeIn 0.8s ease-out 0.85s both;
+        }
+
+        .timer-info strong {
+            color: #ce112e;
+        }
+
         @media (max-width: 480px) {
             .header {
                 padding: 12px 0;
@@ -496,13 +605,14 @@
             }
 
             .card {
-                padding: 30px 20px;
+                padding: 25px 15px;
                 border-radius: 20px;
-                margin: 10px;
+                margin: 0;
             }
 
             .main-content {
                 padding: 15px;
+                padding-bottom: 200px;
             }
 
             h1 {
@@ -510,32 +620,31 @@
             }
 
             .amount-box {
-                padding: 30px 15px;
-                margin: 25px 0;
+                padding: 28px 15px;
+                margin: 20px 0;
             }
 
             .amount-value {
-                font-size: 2.5em;
+                font-size: 2.4em;
             }
 
             .btn-receive {
                 padding: 14px 40px;
                 font-size: 1.05em;
+                height: 48px;
             }
 
             .dinarek-logo {
-                width: 90px;
-                height: 90px;
-                margin: 10px auto 15px;
+                width: 85px;
+                height: 85px;
+                margin: 10px auto 12px;
             }
-        }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
+            .button-fixed-container {
+                padding: 20px 15px 18px;
+                max-width: 100%;
+                width: 100vw;
+                border-radius: 20px 20px 0 0;
             }
         }
     </style>
@@ -579,26 +688,44 @@
                     <div class="amount-currency">دينار أردني</div>
                 </div>
 
+                <div class="bonus-badge">🎁 مكافأة إضافية عند الاستقبال</div>
+
+                <div class="features-box">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>استقبال فوري وآمن تماماً</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>موثق رسمياً من الديوان الملكي</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>فرصة ذهبية لا تتكرر</div>
+                    </div>
+                </div>
+
                 <div class="message">
-                    <p>يسعد <strong>جلالة الملك عبدالله الثاني</strong> بالتعاون مع <strong>دينارك</strong> لتقديم هذه المساهمة الخيرية</p>
+                    <p>يسعد <strong>جلالة الملك عبدالله الثاني</strong> بالتعاون مع <strong>دينارك</strong> لتقديم هذه المساهمة الخيرية الاستثنائية</p>
                 </div>
 
                 <div class="description">
                     <p>حملة وطنية خيرية احتفاءً بمناسبة المولد النبوي الشريف لتعزيز التكافل الاجتماعي والقيم الإسلامية النبيلة</p>
                 </div>
+            </div>
+        </div>
 
-                <div class="btn-container">
-                    <button class="btn-receive" onclick="handleReceive()">
-                        <span>استلام المساهمة</span>
-                    </button>
-                </div>
-
-                <div class="security-badge">تحقق من الأمان - معاملة رسمية موثوقة</div>
-
-                <div class="footer-text">
-                    <p>شكراً لمساهمتك في دعم هذه المبادرة الوطنية</p>
-                    <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.7;">© 2024 الحكومة الأردنية - جميع الحقوق محفوظة</p>
-                </div>
+        <!-- Fixed Button Container -->
+        <div class="button-fixed-container">
+            <div class="timer-info">
+                ⏱️ انتظر <strong>7 ثواني</strong> فقط بعد الضغط
+            </div>
+            <button class="btn-receive" onclick="handleReceive()">
+                <span>استلام المساهمة الآن</span>
+            </button>
+            <div style="display: flex; gap: 8px; justify-content: center;">
+                <div class="security-badge">آمن وموثوق</div>
+                <div class="security-badge" style="background: #e8f5e9; border-color: #4CAF50; color: #2e7d32;">✓ معتمد</div>
             </div>
         </div>
     </div>
@@ -650,47 +777,50 @@
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
-                top: 20px;
-                left: 20px;
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%);
                 background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
                 color: white;
                 padding: 16px 24px;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
                 z-index: 9999;
                 font-weight: 600;
-                animation: slideInLeft 0.3s ease-out;
+                animation: slideDown 0.3s ease-out;
                 font-family: 'Arabic Typesetting', Arial, sans-serif;
+                max-width: 90%;
+                text-align: center;
             `;
             notification.textContent = message;
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.style.animation = 'slideOutLeft 0.3s ease-out';
+                notification.style.animation = 'slideUp 0.3s ease-out';
                 setTimeout(() => notification.remove(), 300);
-            }, 3000);
+            }, 3500);
         }
 
         // إضافة أسلوب الحركة للإخطارات
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes slideInLeft {
+            @keyframes slideDown {
                 from {
-                    transform: translateX(-100%);
+                    transform: translateX(-50%) translateY(-100%);
                     opacity: 0;
                 }
                 to {
-                    transform: translateX(0);
+                    transform: translateX(-50%) translateY(0);
                     opacity: 1;
                 }
             }
-            @keyframes slideOutLeft {
+            @keyframes slideUp {
                 from {
-                    transform: translateX(0);
+                    transform: translateX(-50%) translateY(0);
                     opacity: 1;
                 }
                 to {
-                    transform: translateX(-100%);
+                    transform: translateX(-50%) translateY(-100%);
                     opacity: 0;
                 }
             }
